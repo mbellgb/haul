@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import * as Icon from "react-feather";
 
 import "./card.css";
+import styles from "./card.module.css";
 
 const iconProps = {
   size: 30,
@@ -18,12 +19,13 @@ export const Card = ({
   background = "linear-gradient(45deg,var(--color-red),var(--color-orange))",
   backgroundShade = false,
 }) => {
-  const [elementRef] = useState(React.createRef());
+  const elementRef = useRef(null);
   useEffect(() => {
     elementRef.current.style.setProperty("--card-background", background);
   });
+  const classNames = [styles.card].join(" ");
   return (
-    <div className={`card ${backgroundShade ? "shade" : ""}`} ref={elementRef}>
+    <div className={classNames} ref={elementRef}>
       <h3 className="cardTitle">{title}</h3>
       <p className="cardText">{contexts.map(ctx => `#${ctx}`).join(" ")}</p>
       <div className="flex-horz">
