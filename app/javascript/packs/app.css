@@ -1,0 +1,100 @@
+:root {
+  --color-red: #eb5757;
+  --color-orange: #f2994a;
+  --color-yellow: #f2c94c;
+  --color-green: #27ae60;
+  --color-mint: #6fcf97;
+  --color-lightblue: #56ccf2;
+  --color-blue: #2d9cdb;
+  --color-purple: #bb6bd9;
+  --color-white: #ffffff;
+  --color-black: #222244;
+  --default-border-radius: 10px;
+  --default-transition: 0.25s ease-in-out;
+  --progress-bg: #545050;
+  --progress-fg: var(--color-mint);
+  --progress-br: var(--default-border-radius);
+  --progress-height: 0.5rem;
+  --button-bg: var(--color-black);
+  --button-fg: var(--color-white);
+  --font-body: "A", "Barlow", Arial, Helvetica, sans-serif;
+  --font-heading: "Optician Sans", "Barlow", sans-serif;
+}
+
+html {
+  padding: 10px;
+}
+body {
+  font-family: var(--font-body);
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
+
+.flex-horz {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex {
+  flex: 1;
+}
+
+progress {
+  height: var(--progress-height);
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* border: solid 1px var(--color-black); */
+  border: none;
+  background-color: var(--progress-bg);
+  border-radius: var(--progress-br);
+}
+progress::-webkit-progress-bar {
+  background-color: var(--progress-bg);
+  border-radius: var(--progress-br);
+  width: 100%;
+}
+
+progress.hidden::-webkit-progress-bar {
+  width: 0;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--progress-fg);
+  border-radius: var(--progress-br);
+  transition: width 0.75s ease-in-out;
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--progress-fg);
+  border-radius: var(--progress-br);
+}
+
+@font-face {
+  font-family: "A";
+  font-weight: normal;
+  src: url("../assets/fonts/A.otf");
+}
+@font-face {
+  font-family: "A";
+  font-weight: bold;
+  src: url("../assets/fonts/A-Bold.otf");
+}
+@font-face {
+  font-family: "A";
+  font-weight: lighter;
+  src: url("../assets/fonts/A-Light.otf");
+}
+@font-face {
+  font-family: "AMono";
+  font-weight: normal;
+  src: url("../assets/fonts/A-Mono.otf");
+}
