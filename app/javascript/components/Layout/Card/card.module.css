@@ -1,14 +1,9 @@
 .card {
-  --card-background: linear-gradient(
-    45deg,
-    var(--color-red),
-    var(--color-orange)
-  );
+  --card-background: linear-gradient(45deg, var(--color-red), var(--color-orange));
   position: relative;
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
-  margin: 20px;
 }
 
 .card,
@@ -32,16 +27,16 @@
   top: 0;
   content: "";
 }
-.card.shade::after {
+.cardShade::after {
   filter: brightness(0.65);
 }
-.card.shade::before {
+.cardShade::before {
   filter: brightness(0.65), blur(20px);
 }
 .card::before {
   opacity: 0.85;
   z-index: -2;
-  filter: blur(20px);
+  filter: blur(10px);
 }
 .card::after {
   z-index: -1;

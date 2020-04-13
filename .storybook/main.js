@@ -7,9 +7,9 @@ environment.loaders.get("sass").use.splice(-1, 0, {
 const envConf = environment.toWebpackConfig();
 
 module.exports = {
-  stories: ["../app/javascript/**/*.stories.js"],
+  stories: ["../app/javascript/**/*.stories.{js,jsx}"],
   webpackFinal: config => {
-    return {
+    const conf = {
       ...config,
       module: {
         ...config.module,
@@ -27,6 +27,7 @@ module.exports = {
       },
       plugins: [...config.plugins, environment.plugins.get("MiniCssExtract")],
     };
+    return conf;
   },
   addons: [
     "@storybook/addon-actions",

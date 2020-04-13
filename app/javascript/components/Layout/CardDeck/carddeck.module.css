@@ -1,0 +1,9 @@
+:root {
+    --var-card-deck-gap: 30px;
+}
+
+.cardDeck {
+    display: grid;
+    gap: var(--var-card-deck-gap);
+    grid-template-columns: repeat(auto-fit, 500px);
+}

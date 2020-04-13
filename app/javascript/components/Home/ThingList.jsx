@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Card from "../Card";
+import CardDeck from "../Layout/CardDeck";
+import Card from "../Layout/Card";
 
 const ThingItem = ({ name = "", content = "" }) => <Card title={name} />;
 
@@ -23,9 +24,11 @@ export default () => {
   ) : (
     <div>
       {error && <p>{error}</p>}
-      {things.map(thing => (
-        <ThingItem {...thing} />
-      ))}
+      <CardDeck>
+        {things.map(thing => (
+          <ThingItem {...thing} />
+        ))}
+      </CardDeck>
     </div>
   );
 };

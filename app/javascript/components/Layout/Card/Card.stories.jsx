@@ -7,9 +7,8 @@ import {
   number,
   boolean,
 } from "@storybook/addon-knobs/react";
-import Card, { DocumentCard, TextCard, ListCard, StashCard } from "./";
+import Card, { DocumentCard, TextCard, ListCard, StashCard } from ".";
 
-import "../../packs/app.css";
 const contexts = ["work", "work/client_company"];
 const defaultStories = storiesOf("Card/Card", module);
 

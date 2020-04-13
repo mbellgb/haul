@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import * as Icon from "react-feather";
 
-import "./card.css";
 import styles from "./card.module.css";
 
 const iconProps = {
@@ -23,8 +22,10 @@ export const Card = ({
   useEffect(() => {
     elementRef.current.style.setProperty("--card-background", background);
   });
-  console.log(styles);
-  const classNames = [styles.card].join(" ");
+  const classNames = [
+    styles.card,
+    backgroundShade ? styles.cardShade : "",
+  ].join(" ");
   return (
     <div className={classNames} ref={elementRef}>
       <h3 className={styles.cardTitle}>{title}</h3>
