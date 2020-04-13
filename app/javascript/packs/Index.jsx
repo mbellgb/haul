@@ -2,13 +2,11 @@
 // like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
 // of the page.
 
-import React from 'react'
-import {render} from 'react-dom'
+import React from "react";
+import { render } from "react-dom";
 import App from "../components/App";
+import "./app.css";
 
-document.addEventListener('DOMContentLoaded', () => {
-  render(
-    <App />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})
+document.addEventListener("DOMContentLoaded", () => {
+  render(<App />, document.body.appendChild(document.createElement("div")));
+});

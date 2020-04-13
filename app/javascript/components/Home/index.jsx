@@ -3,7 +3,7 @@ import ThingList from "./ThingList";
 
 export default () => (
   <div>
-    <h1>Haul</h1>
+    <h1>Your Haul</h1>
     <ThingList />
   </div>
 );

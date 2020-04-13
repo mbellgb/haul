@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "A";
+  font-weight: normal;
+  src: url("/fonts/A.otf");
+}
+@font-face {
+  font-family: "A";
+  font-weight: bold;
+  src: url("/fonts/A-Bold.otf");
+}
+@font-face {
+  font-family: "A";
+  font-weight: lighter;
+  src: url("/fonts/A-Light.otf");
+}
+@font-face {
+  font-family: "AMono";
+  font-weight: normal;
+  src: url("/fonts/A-Mono.otf");
+}

@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
+import CardDeck from "../Layout/CardDeck";
+import Card from "../Layout/Card";
 
-const ThingItem = ({ name = "", content = "" }) => (
-  <div>
-    <h3>{name}</h3>
-    <p>{content}</p>
-  </div>
-);
+const ThingItem = ({ name = "", content = "" }) => <Card title={name} />;
 
 export default () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,9 +24,11 @@ export default () => {
   ) : (
     <div>
       {error && <p>{error}</p>}
-      {things.map(thing => (
-        <ThingItem {...thing} />
-      ))}
+      <CardDeck>
+        {things.map(thing => (
+          <ThingItem {...thing} />
+        ))}
+      </CardDeck>
     </div>
   );
 };

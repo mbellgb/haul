@@ -1,0 +1,98 @@
+.card {
+  --card-background: linear-gradient(
+    45deg,
+    var(--color-red),
+    var(--color-orange)
+  );
+  position: relative;
+  font-size: 1.2rem;
+  display: grid;
+  grid-template-columns: auto 50px 30px;
+  grid-template-rows: 2.3rem 1fr 1fr 30px;
+  grid-template-areas:
+    "title title title"
+    "subtitle subtitle subtitle"
+    "contexts contexts contexts"
+    "progress progress-text icon";
+  row-gap: 5px;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.card,
+.card::before,
+.card::after {
+  box-sizing: border-box;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.card::before,
+.card::after {
+  background: var(--card-background);
+  background-size: cover;
+  background-position: 50% 50%;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+}
+.cardShade::after {
+  filter: brightness(0.65);
+}
+.cardShade::before {
+  filter: brightness(0.65), blur(20px);
+}
+.card::before {
+  opacity: 0.85;
+  z-index: -2;
+  filter: blur(10px);
+}
+.card::after {
+  z-index: -1;
+}
+
+.card * {
+  z-index: 1;
+  color: var(--color-white);
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.card progress {
+  --progress-height: 0.5rem;
+  grid-area: progress;
+}
+
+.contexts {
+  grid-area: contexts;
+}
+.subtitle {
+  font-size: 0.9rem;
+  grid-area: subtitle;
+}
+
+.progressText {
+  grid-area: progress-text;
+  justify-self: center;
+}
+
+.cardTitle {
+  font-size: 2rem;
+  max-height: 2.3rem;
+  grid-area: title;
+  text-overflow: ellipsis;
+  align-self: initial;
+  overflow-y: hidden;
+}
+
+.card .flex-horz {
+  justify-content: flex-end;
+}
+
+.card > svg {
+  grid-area: icon;
+}
