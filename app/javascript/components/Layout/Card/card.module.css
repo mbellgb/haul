@@ -1,5 +1,9 @@
 .card {
-  --card-background: linear-gradient(45deg, var(--color-red), var(--color-orange));
+  --card-background: linear-gradient(
+    45deg,
+    var(--color-red),
+    var(--color-orange)
+  );
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10,8 +14,8 @@
 .card::before,
 .card::after {
   box-sizing: border-box;
-  width: 500px;
-  height: 200px;
+  width: var(--card-width);
+  height: var(--card-height);
   padding: 10px;
   border-radius: 10px;
 }

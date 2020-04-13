@@ -11,6 +11,7 @@ const iconProps = {
 
 export const Card = ({
   title = "<No title provided>",
+  subtitle = "",
   contexts = [],
   icon = <Icon.File {...iconProps} />,
   progress = 0,
@@ -29,6 +30,7 @@ export const Card = ({
   return (
     <div className={classNames} ref={elementRef}>
       <h3 className={styles.cardTitle}>{title}</h3>
+      {subtitle && <p className={styles.cardText}>{subtitle}</p>}
       <p className={styles.cardText}>
         {contexts.map(ctx => `#${ctx}`).join(" ")}
       </p>

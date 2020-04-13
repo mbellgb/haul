@@ -35,7 +35,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s app/assets",
     "build-storybook": "build-storybook"
   }
 }

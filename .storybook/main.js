@@ -4,6 +4,7 @@ const { environment } = require("@rails/webpacker");
 environment.loaders.get("sass").use.splice(-1, 0, {
   loader: "resolve-url-loader",
 });
+console.log(environment.plugins);
 const envConf = environment.toWebpackConfig();
 
 module.exports = {
@@ -16,7 +17,8 @@ module.exports = {
         rules: [
           ...config.module.rules.filter(rule => !rule.test.test(".css")),
           ...envConf.module.rules.filter(
-            rule => rule.test && rule.test.test(".css"),
+            rule =>
+              rule.test && (rule.test.test(".css") || rule.test.test(".otf")),
           ),
         ],
       },
@@ -25,7 +27,11 @@ module.exports = {
         ...config.resolve,
         modules: [...config.resolve.modules, ...envConf.resolve.modules],
       },
-      plugins: [...config.plugins, environment.plugins.get("MiniCssExtract")],
+      plugins: [
+        ...config.plugins,
+        environment.plugins.get("MiniCssExtract"),
+        environment.plugins.get("Manifest"),
+      ],
     };
     return conf;
   },

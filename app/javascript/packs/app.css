@@ -18,7 +18,9 @@
   --button-bg: var(--color-black);
   --button-fg: var(--color-white);
   --font-body: "A", "Barlow", Arial, Helvetica, sans-serif;
-  --font-heading: "Optician Sans", "Barlow", sans-serif;
+  --font-heading: "A", "Barlow", sans-serif;
+  --card-width: 400px;
+  --card-height: 150px;
 }
 
 html {
@@ -81,20 +83,20 @@ progress::-moz-progress-bar {
 @font-face {
   font-family: "A";
   font-weight: normal;
-  src: url("../assets/fonts/A.otf");
+  src: url("/assets/fonts/A.otf");
 }
 @font-face {
   font-family: "A";
   font-weight: bold;
-  src: url("../assets/fonts/A-Bold.otf");
+  src: url("/assets/fonts/A-Bold.otf");
 }
 @font-face {
   font-family: "A";
   font-weight: lighter;
-  src: url("../assets/fonts/A-Light.otf");
+  src: url("/assets/fonts/A-Light.otf");
 }
 @font-face {
   font-family: "AMono";
   font-weight: normal;
-  src: url("../assets/fonts/A-Mono.otf");
+  src: url("/assets/fonts/A-Mono.otf");
 }

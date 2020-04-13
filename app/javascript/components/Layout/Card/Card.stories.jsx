@@ -17,6 +17,7 @@ defaultStories.addDecorator(withKnobs);
 defaultStories.add("default", () => (
   <Card
     title={text("Title", "Client Company Invoice - September 2018")}
+    subtitle={text("Subtitle", "Last updated yesterday")}
     contexts={array("Contexts", contexts)}
     progress={number("Progress", 5)}
     progressMax={number("Progress Max", 10)}
@@ -31,6 +32,7 @@ defaultStories.add("default", () => (
 defaultStories.add("with image background", () => (
   <Card
     title={text("Title", "Client Company Invoice - September 2018")}
+    subtitle={text("Subtitle", "Last updated yesterday")}
     contexts={array("Contexts", contexts)}
     progress={number("Progress", 5)}
     progressMax={number("Progress Max", 10)}
@@ -44,6 +46,7 @@ documentStories.addDecorator(withKnobs);
 documentStories.add("default", () => (
   <DocumentCard
     title={text("Title", "Client Company Invoice - September 2018")}
+    subtitle={text("Subtitle", "Last updated yesterday")}
     contexts={array("Contexts", contexts)}
     background={text(
       "Background",
@@ -58,6 +61,7 @@ textStories.addDecorator(withKnobs);
 textStories.add("default", () => (
   <TextCard
     title={text("Title", "Client Company Invoice - September 2018")}
+    subtitle={text("Subtitle", "Last updated yesterday")}
     contexts={array("Contexts", contexts)}
     background={text(
       "Background",
@@ -72,6 +76,7 @@ listStories.addDecorator(withKnobs);
 listStories.add("default", () => (
   <ListCard
     title={text("Title", "Shopping List")}
+    subtitle={text("Subtitle", "Last updated yesterday")}
     contexts={array("Contexts", contexts)}
     background={text(
       "Background",
@@ -88,6 +93,7 @@ stashStories.addDecorator(withKnobs);
 stashStories.add("default", () => (
   <StashCard
     title={text("Title", "Holiday Photos 2018")}
+    subtitle={text("Subtitle", "Last updated yesterday")}
     contexts={array("Contexts", contexts)}
     background={text(
       "Background",
