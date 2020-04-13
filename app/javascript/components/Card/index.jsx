@@ -23,11 +23,14 @@ export const Card = ({
   useEffect(() => {
     elementRef.current.style.setProperty("--card-background", background);
   });
+  console.log(styles);
   const classNames = [styles.card].join(" ");
   return (
     <div className={classNames} ref={elementRef}>
-      <h3 className="cardTitle">{title}</h3>
-      <p className="cardText">{contexts.map(ctx => `#${ctx}`).join(" ")}</p>
+      <h3 className={styles.cardTitle}>{title}</h3>
+      <p className={styles.cardText}>
+        {contexts.map(ctx => `#${ctx}`).join(" ")}
+      </p>
       <div className="flex-horz">
         {progressMax ? (
           <>

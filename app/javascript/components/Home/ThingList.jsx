@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Card from "../Card";
 
-const ThingItem = ({ name = "", content = "" }) => (
-  <div>
-    <h3>{name}</h3>
-    <p>{content}</p>
-  </div>
-);
+const ThingItem = ({ name = "", content = "" }) => <Card title={name} />;
 
 export default () => {
   const [isLoading, setIsLoading] = useState(true);
