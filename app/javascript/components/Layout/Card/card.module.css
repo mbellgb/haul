@@ -5,9 +5,18 @@
     var(--color-orange)
   );
   position: relative;
-  display: flex;
-  flex-direction: column;
   font-size: 1.2rem;
+  display: grid;
+  grid-template-columns: auto 50px 30px;
+  grid-template-rows: 2.3rem 1fr 1fr 30px;
+  grid-template-areas:
+    "title title title"
+    "subtitle subtitle subtitle"
+    "contexts contexts contexts"
+    "progress progress-text icon";
+  row-gap: 5px;
+  column-gap: 10px;
+  align-items: center;
 }
 
 .card,
@@ -55,18 +64,35 @@
 
 .card progress {
   --progress-height: 0.5rem;
-  margin-right: 10px;
+  grid-area: progress;
+}
+
+.contexts {
+  grid-area: contexts;
+}
+.subtitle {
+  font-size: 0.9rem;
+  grid-area: subtitle;
 }
 
 .progressText {
-  margin-right: 10px;
+  grid-area: progress-text;
+  justify-self: center;
 }
 
 .cardTitle {
-  flex: 1;
   font-size: 2rem;
+  max-height: 2.3rem;
+  grid-area: title;
+  text-overflow: ellipsis;
+  align-self: initial;
+  overflow-y: hidden;
 }
 
 .card .flex-horz {
   justify-content: flex-end;
+}
+
+.card > svg {
+  grid-area: icon;
 }

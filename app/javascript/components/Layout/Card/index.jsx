@@ -31,22 +31,20 @@ export const Card = ({
     <div className={classNames} ref={elementRef}>
       <h3 className={styles.cardTitle}>{title}</h3>
       {subtitle && <p className={styles.cardText}>{subtitle}</p>}
-      <p className={styles.cardText}>
+      <p className={styles.contexts}>
         {contexts.map(ctx => `#${ctx}`).join(" ")}
       </p>
-      <div className="flex-horz">
-        {progressMax ? (
-          <>
-            <progress value={progress} max={progressMax} className="flex" />
-            <p className="cardText progressText">
-              {progress || 0}/{progressMax}
-            </p>
-          </>
-        ) : (
-          ""
-        )}
-        {icon}
-      </div>
+      {progressMax ? (
+        <>
+          <progress value={progress} max={progressMax} />
+          <p className={styles.progressText}>
+            {progress || 0}/{progressMax}
+          </p>
+        </>
+      ) : (
+        ""
+      )}
+      {icon}
     </div>
   );
 };
