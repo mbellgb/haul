@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import * as Icon from "react-feather";
 
@@ -7,6 +8,11 @@ import styles from "./card.module.css";
 const iconProps = {
   size: 30,
   color: "#ffffff",
+};
+
+const motionVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1 },
 };
 
 export const Card = ({
@@ -18,6 +24,7 @@ export const Card = ({
   progressMax = 0,
   background = "linear-gradient(45deg,var(--color-red),var(--color-orange))",
   backgroundShade = false,
+  ...otherProps
 }) => {
   const elementRef = useRef(null);
   useEffect(() => {
@@ -28,7 +35,15 @@ export const Card = ({
     backgroundShade ? styles.cardShade : "",
   ].join(" ");
   return (
-    <div className={classNames} ref={elementRef}>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={motionVariants}
+      className={classNames}
+      ref={elementRef}
+      {...otherProps}
+    >
       <h3 className={styles.cardTitle}>{title}</h3>
       {subtitle && <p className={styles.cardText}>{subtitle}</p>}
       <p className={styles.contexts}>
@@ -45,7 +60,7 @@ export const Card = ({
         ""
       )}
       {icon}
-    </div>
+    </motion.div>
   );
 };
 

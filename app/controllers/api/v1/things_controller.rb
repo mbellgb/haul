@@ -4,33 +4,33 @@ class Api::V1::ThingsController < Api::ApiController
 
   def index
     things = Thing.all.order(created_at: :desc)
-    render json: things
+    json_response things
   end
 
   def create
     @thing = Thing.create(thing_params)
     if @thing.save
-      render json: @thing
+      json_response @thing
     else
-      render json: { errors: @thing.errors }, status: :unprocessable_entity
+      json_response ({ errors: @thing.errors }), status: :unprocessable_entity
     end
   end
 
   def show
-    render json: @thing.to_json
+    json_response @thing
   end
 
   def update
     if @thing.update(thing_params)
-      render json: @thing
+      json_response @thing
     else
-      render json: @thing.errors, status: :unprocessable_entity
+      json_response @thing.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
     @thing&.destroy
-    render json: { message: "Deleted" }
+    json_response ({ message: "Deleted" })
   end
 
   private
