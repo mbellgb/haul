@@ -1,4 +1,4 @@
-class Thing < ApplicationRecord
+class ThingMetadata < ApplicationRecord
   validates :name, presence: true
   validates :header_image, presence: false
   belongs_to :thing, polymorphic: true

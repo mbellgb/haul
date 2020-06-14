@@ -3,12 +3,12 @@ class Api::V1::ThingsController < Api::ApiController
   before_action :set_thing, only: [:show, :update, :destroy]
 
   def index
-    things = Thing.all.order(created_at: :desc)
+    things = ThingMetadata.all.order(created_at: :desc)
     json_response things
   end
 
   def create
-    @thing = Thing.create(thing_params)
+    @thing = ThingMetadata.create(thing_params)
     if @thing.save
       json_response @thing
     else
@@ -40,6 +40,6 @@ class Api::V1::ThingsController < Api::ApiController
   end
 
   def set_thing
-    @thing = Thing.find(params[:id])
+    @thing = ThingMetadata.find(params[:id])
   end
 end
