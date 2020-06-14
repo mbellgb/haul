@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_13_155232) do
+ActiveRecord::Schema.define(version: 2020_06_14_123428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 2020_06_13_155232) do
     t.string "header_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "thing_type"
+    t.bigint "thing_id"
+    t.index ["thing_type", "thing_id"], name: "index_things_on_thing_type_and_thing_id"
   end
 
 end
